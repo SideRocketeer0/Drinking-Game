@@ -1,16 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ma website</title>
-    <link rel="stylesheet" type="text/css" href="CSS.css" />
-  <head>
-  <body>
-    <div id="menuBar">
-      <ul>
-        <li>Home</li>
-        <li>Game</li>
-        <li></li>
-      </ul>
-    </div>
-  </body>
-</html>
+
+<head>
+    <title>Whose Drinking next?</title>
+	<link a href="CSS.css" rel="stylesheet" type="text/css">
+    <head>
+
+        <body>
+			<div id="leftSide" ><div>
+				<div id="rightSide" ></div>
+			<div id="body">
+				<div id="banner">
+					<ul id="menu">
+						<li href="Home.html" >Home</li>
+							<li>Random</li>
+					</ul>
+            <h1>The Drinking Game of Randomness</h1>
+		</div>
+		<div id="introduction">
+            <h4>How To Play</h4>
+            <p>
+                You MUST enter at least one player and one drink.
+                <br> As long as you have one of each, you can have as many drinks and players as you like.
+            </p>
+		</div>
+            <h4>Rules</h4>
+            <ol>
+                <li>Always do what Daniel says.</li>
+                <li>Always follow rule number 1.</li>
+                <li>The most important rule, THERE ARE NO RULES!</li>
+            </ol>
+
+            <h3>Add Players and drinks:</h3>
+            <div>
+                Add a Player you have:
+                <input type="text" id="nameEntered">
+            </div>
+            <button onclick="nEntered()">Submit</button>
+
+            <div>
+                Add a Drink you have:
+                <input type="text" id="drinkEntered">
+            </div>
+            <button onclick="dEntered()">Submit</button>
+            <table id="nameTable">
+				<h3>Players Currently in the Game</h3>
+                <tr>
+                    <td>Name:</td>
+					<td>Quit</td>
+                </tr>
+
+            </table>
+			<table id="drinkTable">
+				<td>Drink:</td>
+				<td>Depleted</td>
+			</table>
+
+            <h3>Spin If you dare</h3>
+            <button type="button" onclick="assign()">Begin the Campaign</button>
+            <br>
+            <div id="field"></div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+            <h1>Coming soon - Battle Shots!</h1>
+			<span>Subscribe to SideRocketeer0 </span>
+				<a href="www.youtube.com/SideRocketeer0">www.Youtube.com/SideRocketeer0</a>
+			</div>
+			<script type="text/javascript">
+                var drinks = [];
+                var players = [];
+
+                function dEntered() {
+                    let drinkEntered = document.getElementById("drinkEntered").value;
+					if(drinkEntered.length < 4){
+						alert("please enter a drink name with 4 or more charatcters");
+					} else {
+                    drinks.push(drinkEntered);
+
+					let table = document.getElementById("drinkTable");
+					let row = table.insertRow(1);
+					let cell = row.insertCell(0);
+					cell.innerHTML = drinkEntered;
+				}
+                }
+
+                for(let i = 0; i < array.length; i++){
+                    do sommit.
+                }
+
+                array.foreach(do sommit);
+
+
+                function nEntered(test) {
+                    let nameEntered = document.getElementById("nameEntered").value;
+					if(nameEntered.length < 3){
+						alert("Please enter a name with three or more characters");
+					} else {
+                    players.push(nameEntered);
+
+                    let table = document.getElementById("nameTable");
+                    let row = table.insertRow(1);
+                    let cell = row.insertCell(0);
+                    cell.innerHTML = nameEntered;
+                    //table.children[1 + Math.random() * (table.children.length - 1) | 0].children[0];
+
+					let quit = document.createElement("BUTTON");
+					let quitText = document.createTextNode("Remove the filth!");
+					quit.appendChild(quitText);
+					let cell2 = row.insertCell(1);
+					cell2.appendChild(quit);
+					quit.addEventListener("click", _=>deleteRow(this));
+				}
+                }
+
+
+				function deleteRow(r){
+					let d = window.event.toElement.parentNode.parentNode.rowIndex;
+					document.getElementById("nameTable").deleteRow(d);
+
+				}
+
+
+                function assign() {
+                    let randomNumber1 = Math.floor(Math.random() * drinks.length);
+                    let randomNumber2 = Math.floor(Math.random() * players.length);
+                    let personDrinking = players[randomNumber2];
+                    let alcholicDrink = drinks[randomNumber1];
+                    document.getElementById('field').innerHTML = `The person drinking is ${players[randomNumber2]} and the drink they are having is ${drinks[randomNumber1]}`;
+
+                }
+            </script>
+        </body>
+        <html>
