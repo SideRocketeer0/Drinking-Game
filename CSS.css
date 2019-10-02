@@ -1,4 +1,28 @@
-#menuBar {
-  background-color: red;
-  
+body {
+	background-color: grey;
+}
+#nameTable {
+	float: left;
+}
+td {
+	border: 1px solid black;
+}
+#banner{
+	background-color: blue;
+	text-align: center;
+}
+#introduction{
+	position: absolute;
+	left: 50%;
+}
+
+
+#body{
+	min-width: 780px;
+	width: 60%;
+	left: 50%;
+	transform: translate(-50%,0);
+	height: 100vh;
+	background-color: lightgrey;
+	position: absolute;
 }
