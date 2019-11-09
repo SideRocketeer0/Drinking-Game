@@ -116,7 +116,7 @@
 					quit.appendChild(quitText);
 					let cell2 = row.insertCell(1);
 					cell2.appendChild(quit);
-					quit.addEventListner("click",_=>deleteFromArray(this));
+					quit.addEventListner("click",_=>deleteFromArray(nameEntered));
 					quit.addEventListener("click", _=>deleteRow(this));
 				}
                 }
@@ -128,8 +128,8 @@
 
 				}
 				
-				function deleteFromArray(r){
-					let name = r.innerHTML;
+				function deleteFromArray(name){
+					let name = name.innerHTML;
 					for(let i = 0; i < players.length; i++){
 						if(players[i] == name){
 							players.splice(i, i+1);
