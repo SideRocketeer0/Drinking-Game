@@ -124,16 +124,13 @@
 
 
 				function deleteRow(r){
-					let d = window.event.toElement.parentNode.parentNode.rowIndex;
-					let cell = document.getElementById("nameTable").cell(0);
-					let name = cell.innerHTML;
-					
+					let name = r.parent.parent.cell[0].innerHtml;
 					for(let i = 0; i < players.length; i++){
 						if(players[i] == name){
 							players.splice(i, i+1);
 						}
 					}
-					document.getElementById("nameTable").deleteRow(d);
+					document.getElementById("nameTable").deleteRow(r.parent.parent);
 
 				}
 				
