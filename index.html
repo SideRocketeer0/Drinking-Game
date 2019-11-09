@@ -124,7 +124,7 @@
 
 
 				function deleteRow(r){
-					let name = r.parent.parent.cell[0].innerHtml;
+					let name = r.parent.parent.children[0].innerHtml;
 					for(let i = 0; i < players.length; i++){
 						if(players[i] == name){
 							players.splice(i, i+1);
