@@ -88,6 +88,7 @@
 					let row = table.insertRow(1);
 					let cell = row.insertCell(0);
 					cell.innerHTML = drinkEntered;
+						document.getElementById("drinkEntered").innerHTML = "";
 				}
                 }
 
@@ -116,26 +117,26 @@
 					quit.appendChild(quitText);
 					let cell2 = row.insertCell(1);
 					cell2.appendChild(quit);
-					quit.addEventListner("click",_=>deleteFromArray(nameEntered));
 					quit.addEventListener("click", _=>deleteRow(this));
+					document.getElementById(drinkEntered).innerHTML = "";
 				}
                 }
 
 
 				function deleteRow(r){
 					let d = window.event.toElement.parentNode.parentNode.rowIndex;
-					document.getElementById("nameTable").deleteRow(d);
-
-				}
-				
-				function deleteFromArray(r){
-					let name = r.innerHTML;
+					let cell = document.getElementById("nameTable").cell(0);
+					let name = cell.innerHTML;
+					
 					for(let i = 0; i < players.length; i++){
 						if(players[i] == name){
 							players.splice(i, i+1);
 						}
 					}
+					document.getElementById("nameTable").deleteRow(d);
+
 				}
+				
 				
 				//function function(item, index, arr, name){
 					//if(arr[index] = name){
