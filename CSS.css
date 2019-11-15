@@ -10,6 +10,7 @@ td {
 #banner{
 	background-color: rbg(21, 52, 103);
 	text-align: center;
+	height: 50px;
 }
 #introduction{
 	position: absolute;
