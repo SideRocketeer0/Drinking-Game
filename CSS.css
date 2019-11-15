@@ -8,7 +8,7 @@ td {
 	border: 1px solid black;
 }
 #banner{
-	background-color: blue;
+	background-color: rbg(21, 52, 103);
 	text-align: center;
 }
 #introduction{
@@ -25,4 +25,5 @@ td {
 	height: 100vh;
 	background-color: lightgrey;
 	position: absolute;
+	margin-top: 0px;
 }
