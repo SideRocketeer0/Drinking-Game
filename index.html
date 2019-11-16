@@ -40,7 +40,7 @@
                             </tr>
                         </table>
                         <table id="drinkTable">
-                            <td>Number:</td>
+                            <td>Num:</td>
                             <td>Drink:</td>
                             <td>Depleted</td>
                         </table>
@@ -92,9 +92,9 @@
 
                                 let table = document.getElementById("drinkTable");
                                 let row = table.insertRow(1);
-                                let cell = row.insertCell(0);
+                                let cell = row.insertCell(1);
                                 cell.innerHTML = drinkIndex;
-                                let cell2 = row.insertCell(1);
+                                let cell2 = row.insertCell(2);
                                 cell.innerHTML = drinkEntered;
                                 //document.getElementById("drinkEntered").innerHTML = "";
                                 drinkIndex++;
