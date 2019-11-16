@@ -77,32 +77,34 @@
                     <script type="text/javascript">
                         var drinks = [];
                         var players = [];
+                        var drinkIndex = 0;
+                        var playerIndex = 0;
+                        
 
                         function dEntered() {
                             let drinkEntered = document.getElementById("drinkEntered").value;
-                            if (drinkEntered.length < 4) {
-                                alert("please enter a drink name with 4 or more charatcters");
+                            if (drinkEntered.length < 3) {
+                                alert("please enter a drink name with three or more charatcters");
                             } else {
-                                drinks.push(drinkEntered);
+                                drinks.splice(drinkIndex, 0, drinkEntered);
+                                
 
                                 let table = document.getElementById("drinkTable");
                                 let row = table.insertRow(1);
                                 let cell = row.insertCell(0);
+                                cell.innerHTML = drinkIndex;
+                                let cell2 = row.insertCell(1);
                                 cell.innerHTML = drinkEntered;
-                                document.getElementById("drinkEntered").innerHTML = "";
+                                //document.getElementById("drinkEntered").innerHTML = "";
+                                drinkIndex++;
+                                
                             }
                         }
 
-                        for (let i = 0; i < array.length; i++) {
-                            //do sommit.
-                        }
-
-                        //array.foreach(do sommit);
-
                         function nEntered(test) {
                             let nameEntered = document.getElementById("nameEntered").value;
-                            if (nameEntered.length < 3) {
-                                alert("Please enter a name with three or more characters");
+                            if (nameEntered.length < 4) {
+                                alert("Please enter a name with four or more characters");
                             } else {
                                 players.push(nameEntered);
 
@@ -124,12 +126,8 @@
 
                         function deleteRow(r) {
                             let name = r.parentElement.parentElement.firstChild.firstChild;
-                            for (let i = 0; i < players.length; i++) {
-                                if (players[i] == name) {
-                                    players.splice(i, i + 1);
-                                }
-                            }
                             document.getElementById("nameTable").deleteRow(r.parent.parent);
+                            drinks.splice()
 
                         }
 
