@@ -4,7 +4,7 @@
 <head>
     <title>Whose Drinking next?</title>
     <link a href="CSS.css" rel="stylesheet" type="text/css">
-
+    <script type="text/javascript" src="script.js"></script>
     <head>
 
         <body>
@@ -12,15 +12,18 @@
                 <div>
                     <div id="rightSide"></div>
                     <div id="body">
-                       
+
                         <div id="banner">
-                            <h1>The Drinking Game of Randomness</h1>
+                            <h1>The Drinking Game of Randomness🥃</h1>
                         </div>
                         <div id="innerBody">
                         <div id="introduction">
                             <h4>How To Play</h4>
-                            <p>You MUST enter at least one player and one drink.
-                                <br> As long as you have one of each, you can have as many drinks and players as you like.
+                            <p>
+                              You MUST enter at least one player and one drink.<br>
+                              As long as you have one of each, you can have as many drinks and players as you like.<br>
+                              Remove players and/or drinks until you have a winner.<br>
+                              This is a get drunk fast game.
                             </p>
                         </div>
                         <h4>Rules</h4>
@@ -28,22 +31,24 @@
                             <li>Always do what Daniel says.</li>
                             <li>Always follow rule number 1.</li>
                             <li>The most important rule, THERE ARE NO RULES!</li>
+                            <li>Oh and you cannot use the same name.</li>
                         </ol>
                         <br>
                         <br>
                          <div id="table">
+                           <h3>Players/Drinks Currently in the Game:</h3>
+                           <div id="scroll">
                          <table id="nameTable">
-                            <h3>Players Currently in the Game</h3>
                             <tr>
-                                <td>Name:</td>
-                                <td>Quit</td>
+                                <th>Name:</th>
+                                <th>Quit</th>
                             </tr>
                         </table>
                         <table id="drinkTable">
-                            <td>Num:</td>
-                            <td>Drink:</td>
-                            <td>Depleted</td>
+                            <th>Drink:</th>
+                            <th>Depleted</th>
                         </table>
+                      </div>
                         </div>
                         <h3>Add Players and drinks:</h3>
                         <div>
@@ -56,12 +61,16 @@
                             <input type="text" id="drinkEntered">
                         </div>
                         <button onclick="dEntered()">Submit</button>
-                        
-                        <h3>Spin If you dare</h3>
-                        <button type="button" onclick="assign()">Begin the Campaign</button>
-                        <br>
-                        <div id="field"></div>
-                        <br>
+                          <h3>Spin If you dare</h3>
+                          <button type="button" onclick="assign()">Begin the Game🍻</button><span id="hint"></span>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <div id="box">
+                            <p style="font-family: Georgia, serif;font-size:20px;" id="field"></p>
+                          </div>
+
                         <br>
                         <br>
                         <br>
@@ -75,79 +84,5 @@
                         <a href="www.youtube.com/SideRocketeer0">www.Youtube.com/SideRocketeer0</a>
                     </div>
                     </div>
-                    <script type="text/javascript">
-                        var drinks = [];
-                        var players = [];
-                        var drinkIndex = 0;
-                        var playerIndex = 0;
-                        
-
-                        function dEntered() {
-                            let drinkEntered = document.getElementById("drinkEntered").value;
-                            if (drinkEntered.length < 3) {
-                                alert("please enter a drink name with three or more charatcters");
-                            } else {
-                                drinks.splice(drinkIndex, 0, drinkEntered);
-                                
-
-                                let table = document.getElementById("drinkTable");
-                                let row = table.insertRow(1);
-                                let cell = row.insertCell(1);
-                                cell.innerHTML = drinkIndex;
-                                let cell2 = row.insertCell(2);
-                                cell.innerHTML = drinkEntered;
-                                //document.getElementById("drinkEntered").innerHTML = "";
-                                drinkIndex++;
-                                
-                            }
-                        }
-
-                        function nEntered(test) {
-                            let nameEntered = document.getElementById("nameEntered").value;
-                            if (nameEntered.length < 4) {
-                                alert("Please enter a name with four or more characters");
-                            } else {
-                                players.push(nameEntered);
-
-                                let table = document.getElementById("nameTable");
-                                let row = table.insertRow(1);
-                                let cell = row.insertCell(0);
-                                cell.innerHTML = nameEntered;
-                                //table.children[1 + Math.random() * (table.children.length - 1) | 0].children[0];
-
-                                let quit = document.createElement("BUTTON");
-                                let quitText = document.createTextNode("Remove the filth!");
-                                quit.appendChild(quitText);
-                                let cell2 = row.insertCell(1);
-                                cell2.appendChild(quit);
-                                quit.addEventListener("click", _ => deleteRow(this));
-                                document.getElementById(nameEntered).innerHTML = "";
-                            }
-                        }
-
-                        function deleteRow(r) {
-                            let name = r.parentElement.parentElement.firstChild.firstChild;
-                            document.getElementById("nameTable").deleteRow(r.parent.parent);
-                            drinks.splice()
-
-                        }
-
-                        //function function(item, index, arr, name){
-                        //if(arr[index] = name){
-                        //	console.log('yay');
-                        //	players.splice(index, index + 1);
-                        //}
-                        //		console.log('nay');
-                        //}
-
-                        function assign() {
-                            let randomNumber1 = Math.floor(Math.random() * drinks.length);
-                            let randomNumber2 = Math.floor(Math.random() * players.length);
-                            let personDrinking = players[randomNumber2];
-                            let alcholicDrink = drinks[randomNumber1];
-                            document.getElementById('field').innerHTML = `The person drinking is ${players[randomNumber2]} and the drink they are having is ${drinks[randomNumber1]}`;
-
-                        }
-                    </script>
         </body>
         <html>

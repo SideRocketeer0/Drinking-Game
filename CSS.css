@@ -1,9 +1,7 @@
 #nameTable {
 	float: left;
 }
-td {
-	border: 1px solid black;
-}
+
 #banner{
 	background-color: #153467;
 	text-align: center;
@@ -17,6 +15,82 @@ td {
 #table{
 	position: absolute;
 	left: 50%;
+}
+
+#scroll{
+	height: 140px;
+	overflow: auto;
+}
+
+table {
+	border-spacing: 0;
+	color: #153467;
+	font-family: Helvetica, Arial, sans-sans-serif;
+	width: 170px;
+}
+
+table button{
+	background-color: inherit;
+	border: none;
+	text-align: center;
+}
+
+table button:hover{
+	color: #FFF;
+	background-color: #666;
+	transition: all 0.3s;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+th {
+	background-color: #A9A9A9;
+	font-weight: bold;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+td {
+	background: #FAFAFA;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+td, th {
+	border: 1px solid #153467;
+	padding: 5px;
+	transition: all 0.3s;
+}
+
+tr td:nth-child(odd):hover{
+	background-color: #666;
+	color: #FFF;
+}
+
+tr:nth-child(odd) td{
+	background-color: #C0C0C0;
+}
+
+#nameTable tr:first-child th:nth-child(1){
+	border-top-left-radius: 15px;
+}
+
+#drinkTable tr:first-child th:last-child{
+	border-top-right-radius: 15px;
+}
+
+#box{
+	background-color: #e6e6e9;
+	height: 60px;
+	width: 750px;
+	border: 2px solid #153467;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#playArea{
+
 }
 
 #body{
