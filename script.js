@@ -3,6 +3,7 @@ var players = [];
 var drinkIndex = 0;
 var playerIndex = 0;
 
+
 function dEntered() {
     let drinkEntered = document.getElementById("drinkEntered").value;
     if (drinkEntered.length > 7) {
@@ -49,13 +50,7 @@ function deleteRow(r) {
 
 
 }
-//function function(item, index, arr, name){
-//if(arr[index] = name){
-//	console.log('yay');
-//	players.splice(index, index + 1);
-//}
-//		console.log('nay');
-//}
+
 var index = 0;
 function assign() {
     let randomNumber1 = Math.floor(Math.random() * drinks.length);
@@ -67,4 +62,32 @@ function assign() {
     if(index == 3){
       document.getElementById("hint").innerHTML = "   Hint! - If you want more of a chance to get a drink, then add it twice!!";
     }
+    if(index%2){
+        document.body.style.backgroundColor = "yellow";
+    } else{
+      document.body.style.backgroundColor = "#9ca0a6";
+    }
+}
+
+function end(){
+  if(players.length != 1){
+    alert("Their needs to be one clear winner for the game to end!");
+  } else{
+    alert(`The winner is ${players[0]} on round ${index}, well done now get to the club!!!`);
+    var selected = document.getElementById("leftSide");
+    var child = selected.lastElementChild;
+    while(child){
+      selected.removeChild(child);
+      child = selected.lastElementChild;
+    }
+    document.body.style.backgroundColor = "#501B1D";
+    var title = document.createElement("h1");
+    var text = document.createTextNode("Refresh the page to play again.");
+    title.appendChild(text);
+    var wholeBody = document.getElementById("empty");
+    wholeBody.appendChild(title);
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube.com/embed/6vetxQZJ2Ug";
+    wholeBody.appendChild(iframe);
+  }
 }

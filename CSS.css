@@ -40,7 +40,10 @@ table button:hover{
 	background-color: #666;
 	transition: all 0.3s;
 	border-radius: 8px;
-	cursor: pointer;
+}
+
+button:hover{
+		cursor: pointer;
 }
 
 th {
@@ -89,7 +92,16 @@ tr:nth-child(odd) td{
 	text-align: center;
 }
 
-#playArea{
+#finished{
+	border: none;
+	border-radius: 5px;
+	padding: 4px 10px 4px 10px;
+	background-color: #e6e6e9;
+}
+
+#finished:hover{
+	color: white;
+	background-color: blue;
 
 }
 
@@ -106,9 +118,26 @@ tr:nth-child(odd) td{
 }
 
 #innerBody{
-        margin: 20px;
+  margin: 20px;
+}
+
+#empty{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+
+}
+
+iframe{
+	width: 560px;
+	height: 315px;	
 }
 
 body{
-	background-color: #9ca0a6;
+	background-color: lightyellow;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
